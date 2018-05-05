@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="test-factura" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="108aa334-49d3-406d-99c3-9feb969de3d0">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Factura"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="343"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="643"/>
+	<parameter name="LOGO_DATA" class="java.lang.Object" isForPrompting="false"/>
+	<queryString language="xPath">
+		<![CDATA[/*[local-name()='Invoice']/*[local-name()='InvoiceLine']]]>
+	</queryString>
+	<field name="NroItem" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="cbc:ID"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Quantity" class="java.lang.Double">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="cbc:InvoicedQuantity"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="UnitCode" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="cbc:InvoicedQuantity/@unitCode"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Description" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="cac:Item/cbc:Description"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ItemCode" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="cac:Item/cac:SellersItemIdentification/cbc:ID"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="UnitValue" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="cac:Price/cbc:PriceAmount"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ItemPrice" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="cac:PricingReference/cac:AlternativeConditionPrice/cbc:PriceAmount"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CompanyRUC" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression">
+			<![CDATA[/*[local-name()='Invoice']/cac:AccountingSupplierParty/cbc:CustomerAssignedAccountID]]>
+		</property>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DocumentType" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression">
+			<![CDATA[/*[local-name()='Invoice']/cbc:InvoiceTypeCode]]>
+		</property>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DocumentIdentifier" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression">
+			<![CDATA[/*[local-name()='Invoice']/cbc:ID]]>
+		</property>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CompanyName" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression">
+			<![CDATA[/*[local-name()='Invoice']/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationName]]>
+		</property>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CompanyStreetName" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression">
+			<![CDATA[/*[local-name()='Invoice']/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:StreetName]]>
+		</property>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CompanyCityName" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression">
+			<![CDATA[/*[local-name()='Invoice']/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:CityName]]>
+		</property>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CompanyDistrict" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression">
+			<![CDATA[/*[local-name()='Invoice']/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:District]]>
+		</property>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CompanyCountryIdentificationCode" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression">
+			<![CDATA[/*[local-name()='Invoice']/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode]]>
+		</property>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CompanyEmail" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression">
+			<![CDATA[/*[local-name()='Invoice']/ext:UBLExtensions/ext:UBLExtension[cbc:ID/text()="CLOSE2U"]/ext:ExtensionContent/cbc:AdditionalInformation/cbc:AdditionalProperty[cbc:ID/text()="correoEmpresa"]/cbc:Value]]>
+		</property>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CompanyPhone" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression">
+			<![CDATA[/*[local-name()='Invoice']/ext:UBLExtensions/ext:UBLExtension[cbc:ID/text()="CLOSE2U"]/ext:ExtensionContent/cbc:AdditionalInformation/cbc:AdditionalProperty[cbc:ID/text()="telefono"]/cbc:Value]]>
+		</property>
+	</field>
+	<field name="CustomerName" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression">
+			<![CDATA[/*[local-name()='Invoice']/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationName]]>
+		</property>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CustomerStreetName" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression">
+			<![CDATA[/*[local-name()='Invoice']/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:StreetName]]>
+		</property>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CustomerCountryIdentificationCode" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression">
+			<![CDATA[/*[local-name()='Invoice']/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode]]>
+		</property>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CustomerRUC" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression">
+			<![CDATA[/*[local-name()='Invoice']/cac:AccountingCustomerParty/cbc:CustomerAssignedAccountID]]>
+		</property>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CustomerPaymentMethod" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression">
+			<![CDATA[/*[local-name()='Invoice']/ext:UBLExtensions/ext:UBLExtension[cbc:ID/text()="CLOSE2U"]/ext:ExtensionContent/cbc:AdditionalInformation/cbc:AdditionalProperty[cbc:ID/text()="FormaPago"]/cbc:Value]]>
+		</property>
+	</field>
+	<field name="IssueDate" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression">
+			<![CDATA[/*[local-name()='Invoice']/cbc:IssueDate]]>
+		</property>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DocumentCurrencyCode" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression">
+			<![CDATA[/*[local-name()='Invoice']/cbc:DocumentCurrencyCode]]>
+		</property>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="155" splitType="Stretch">
+			<rectangle>
+				<reportElement x="420" y="0" width="135" height="100" uuid="9f472243-9aa5-4e38-a859-63621022a360"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineColor="#1850F5"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="420" y="18" width="134" height="20" uuid="ee2e6ddc-df75-4913-95b9-94b6fff7128e"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["RUC: "+$F{CompanyRUC}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="420" y="38" width="134" height="20" uuid="51b01ce2-f411-477b-99c1-d198a98391e6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{DocumentType}.equals("01")?"FACTURA":$F{DocumentType}.equals("03")?"BOLETA":"UY")+" ELECTRÓNICA"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="420" y="58" width="134" height="20" uuid="77e4d79c-2735-4a70-87b1-bbd328237242"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DocumentIdentifier}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="" x="0" y="51" width="420" height="10" uuid="ca6c1a8c-123b-42aa-8612-10a52221567d"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="true" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CompanyName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="61" width="420" height="10" uuid="d30d51e0-9c97-4ea9-b74c-63d86e11b391"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CompanyStreetName}.trim()+" "+$F{CompanyCityName}+" - "+$F{CompanyDistrict}+" - "+$F{CompanyCountryIdentificationCode}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="71" width="420" height="10" uuid="9471a402-b7e8-4095-adba-b4a1dd4db414"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["E-mail: "+$F{CompanyEmail}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="81" width="420" height="10" uuid="f32ab2f0-3604-4695-b80a-111ee1413ad4"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Teléfono: "+$F{CompanyPhone}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="91" width="420" height="10" uuid="0c888ce9-0967-4b20-8bf8-a7d4092a1eee"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Web: www.close2u.pe - www.invoice2u.pe/portal]]></text>
+			</staticText>
+			<image isLazy="true">
+				<reportElement x="0" y="0" width="180" height="50" uuid="6628a554-49d0-4256-8193-83df06da17a9"/>
+				<imageExpression><![CDATA[$P{LOGO_DATA}]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="0" y="105" width="554" height="1" uuid="9e0e4988-1ac6-4e85-8f46-0486694dfc9b"/>
+				<graphicElement>
+					<pen lineColor="#1850F5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="151" width="554" height="1" uuid="da5e64ae-4430-43f4-99c4-7c5ae8b0962a"/>
+				<graphicElement>
+					<pen lineColor="#1850F5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="110" width="80" height="10" uuid="0916b5a1-2ec8-4663-948c-fd08dda8c28c"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Señores:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="120" width="80" height="10" uuid="5393a45c-c581-4442-9480-4a0a97ec7df7"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dirección:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="130" width="80" height="10" uuid="140b05fd-fae2-4953-b58d-9d7518be8e69"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RUC:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="140" width="80" height="10" uuid="d2daa3bc-0cfb-4f21-8e4d-873af6b8f5ac"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Forma de pago:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="110" width="474" height="10" uuid="9f3499ff-9dcc-469e-a2f1-ef5b29cf61c8"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CustomerName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="120" width="474" height="10" uuid="82ce2b84-1f12-4dc2-bb86-215f299095b4"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CustomerStreetName}+" - "+$F{CustomerCountryIdentificationCode}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="130" width="100" height="10" uuid="9c3a354a-d6ff-41bb-bc9f-973489564bd3"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CustomerRUC}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="140" width="100" height="10" uuid="4baa51a0-6f20-4922-99a7-b602fa4ec147"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CustomerPaymentMethod}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="200" y="130" width="80" height="10" uuid="b9525e0b-96c6-424e-8bd2-32fdcb654fb4"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha de emisión:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="280" y="130" width="100" height="10" uuid="d69f367e-a269-4b7a-ab49-75af6e273e19"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{IssueDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="400" y="140" width="80" height="10" uuid="4c97facc-ca84-4885-9769-aa1e4e745778"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Moneda:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="480" y="140" width="74" height="10" uuid="65957e57-f674-4eee-aafd-2786956c2198"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DocumentCurrencyCode}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<rectangle radius="0">
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="20" backcolor="#3E38FC" uuid="8c8cc801-d7fd-4b14-94cc-32c7a263e92a"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="30" height="20" forecolor="#FFFFFF" uuid="9467647b-0e6c-4fc5-91f6-659d83bc8812"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[#]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="0" width="40" height="20" forecolor="#FFFFFF" uuid="7927386f-1768-48f0-b10e-6862776c7f6c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[Cant.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="70" y="0" width="70" height="20" forecolor="#FFFFFF" uuid="8072b935-5566-4b4f-8203-b28a71891442"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[Código]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="0" width="140" height="20" forecolor="#FFFFFF" uuid="60136e5d-4abf-461c-9109-99f4f4c6149c"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[Descripción]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="0" width="50" height="20" forecolor="#FFFFFF" uuid="004a54e6-23f6-42e5-b292-2de2394462a5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[Und.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="0" width="50" height="20" forecolor="#FFFFFF" uuid="0bc38fe3-23bf-4fcc-a2b5-25df3406cee9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[V.U.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="0" width="50" height="20" forecolor="#FFFFFF" uuid="1076cc3e-ff17-4f26-910b-496d7db821a1"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[P.U.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="0" width="50" height="20" forecolor="#FFFFFF" uuid="1f3e5e14-0ace-420d-9b23-bad2d935f55d"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[Dscto.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="480" y="0" width="74" height="20" forecolor="#FFFFFF" uuid="f4783507-1a88-415d-95c6-506df9bbaac9"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="5"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[Valor Venta]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="20" uuid="a13e8d38-17d8-4366-949c-539787e8bb53"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="0" y="0" width="30" height="20" uuid="8cf512ff-cf1f-43dc-917b-57af0c0076a9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1469e408-f245-48de-8bb5-bb3b066f6be3"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NroItem}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00#;(#,##0.00#-)">
+				<reportElement x="30" y="0" width="40" height="20" uuid="be70ef19-26c3-4f20-bc84-55bc72298eda">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4c443efe-d4df-44ad-8295-1d11ce33a465"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Quantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="70" y="0" width="70" height="20" uuid="4dd06127-9cfd-49fd-970b-a9e1528d7831"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ItemCode}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="140" y="0" width="140" height="20" uuid="f5edbf2a-8196-4596-abaa-37eda55d9044"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Description}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="0" width="50" height="20" uuid="91e39ae8-3ba8-4a42-8c8d-ca9724d6831f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{UnitCode}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00#;(#,##0.00#-)">
+				<reportElement x="330" y="0" width="50" height="20" uuid="f9152a8a-a444-4198-8bfc-494232f978ea"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new BigDecimal($F{UnitValue})]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00#;(#,##0.00#-)">
+				<reportElement x="380" y="0" width="50" height="20" uuid="0d6999e3-7967-4a21-881f-be7a599d79ab"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new BigDecimal($F{ItemPrice})]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00#;(#,##0.00#-)">
+				<reportElement x="480" y="0" width="74" height="20" uuid="14c533e1-619b-4165-8789-9ed79b201e54"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="5"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new BigDecimal($F{UnitValue})]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="70" splitType="Stretch"/>
+	</summary>
+</jasperReport>
